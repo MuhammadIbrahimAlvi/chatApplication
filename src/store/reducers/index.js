@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const initialState = {
   users: [],
   current_user: {},
@@ -39,3 +41,5 @@ export default rootReducer;
 //       return state;
 //   }
 // };
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
