@@ -4,7 +4,7 @@ import { styles } from "./AvatarIcon.style";
 import Avatar from "@material-ui/core/Avatar";
 import AvatarImage from "../../../images/avatar.jpeg";
 
-const AvatarIcon = ({ classes, props }) => {
-  return <Avatar alt="Remy Sharp" src={AvatarImage} />;
+const AvatarIcon = ({ classes, ...props }) => {
+  return <Avatar alt="Remy Sharp" src={props.url} />;
 };
 export default withStyles(styles)(AvatarIcon);

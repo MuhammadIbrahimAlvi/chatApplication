@@ -28,8 +28,8 @@ const UsersList = ({ classes }) => {
             onClick={() => dispatch(Chat_user(user))}
           >
             <div className={classes.UserCard}>
-              {/* <AvatarIcon url={user.image_url} /> */}
-              <img src={user.image_url} />
+              <AvatarIcon url={user.image_url} />
+              {/* <img src={user.image_url} /> */}
               <h5 className={classes.userName}>{user.name}</h5>
             </div>
             <div>
