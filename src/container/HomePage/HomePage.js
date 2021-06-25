@@ -10,9 +10,9 @@ const HomePage = ({ classes }) => {
         <div className={classes.HomePage}>
             <SideBar />
             <Chats />
-            <div style = {{height: '100vh', width:'75%'}}>
+            {/* <div style = {{height: '100vh', width:'100%'}}>
             <ChatScreen />
-            </div>
+            </div> */}
             
         </div>
     );

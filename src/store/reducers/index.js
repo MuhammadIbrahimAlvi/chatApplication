@@ -3,6 +3,8 @@ import { useState } from "react";
 const initialState = {
   users: [],
   current_user: {},
+  chat_user: {},
+  chats: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -12,7 +14,15 @@ const rootReducer = (state = initialState, action) => {
     case "SETFIREBASEUSERS":
       return {
         ...state,
+        users: action.payload,
       };
+    case "CHATUSERDATA":
+      return {
+        ...state,
+        chat_user: action.payload,
+      };
+    case "MESSAGES":
+      return {};
     default:
       return state;
   }
