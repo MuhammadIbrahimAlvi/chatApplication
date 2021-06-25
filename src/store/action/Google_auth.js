@@ -1,10 +1,8 @@
 import firebase from "../../config/firebase";
-// import history from 'react-router-dom;
-// import { useDispatch } from "react-redux";
-const Google_auth = () => {
+
+const Google_auth = (history) => {
   return (dispatch) => {
     var provider = new firebase.auth.GoogleAuthProvider();
-
     firebase
       .auth()
       .signInWithPopup(provider)
@@ -29,12 +27,10 @@ const Google_auth = () => {
           .set(create_user)
           .then(() => {
             dispatch({
-              type: "Set_User",
+              type: "Set_User_By_Auth",
               payload: create_user,
             });
-            alert("Inserted Successfully");
-            // here we will pass a router with
-            // history.push('/componentUrl')
+            history.push("/userpanel");
           });
 
         // ...
@@ -47,3 +43,8 @@ const Google_auth = () => {
 };
 
 export { Google_auth };
+// import history from 'react-router-dom;
+// import { useDispatch } from "react-redux";
+// const history = useHistory();
+// import { useHistory } from "react-router-dom"
+// history.push("/userpanel");
