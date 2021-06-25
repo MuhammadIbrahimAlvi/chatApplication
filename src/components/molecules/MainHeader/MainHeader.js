@@ -15,7 +15,7 @@ const MainHeader = ({ classes }) => {
                 className={classes.HeaderItems}
                 />
                 <div className={classes.UserCard}>
-                <AvatarIcon/>
+                <AvatarIcon variant="square" />
                 <h4>
                 User Name</h4>
                 </div>

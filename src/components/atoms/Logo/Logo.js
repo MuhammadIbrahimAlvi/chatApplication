@@ -11,6 +11,7 @@ const Logo = ({ classes }) => {
             <div className={classes.Logo}>
                 <img className={classes.LogoImage} src={logo} alt="" />
             </div>
+            
         </div>
 
     );

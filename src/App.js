@@ -1,20 +1,18 @@
 import React from "react";
 import LoginPage from "./container/LoginPage/LoginPage";
-import SideBar from "./components/organisms/SideBar/SideBar";
-import Chats from "./components/organisms/Chats/Chats";
-import ChatScreen from './container/ChatScreen/ChatScreen';
+import HomePage from "./container/HomePage/HomePage";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className = "App">
-      {/* <LoginPage/> */}
-    <SideBar/>
-    <Chats/>
-      {/* <MainHeader/> */}
-      {/* <ChatAreaHeader/> */}
-      <ChatScreen/>
-    
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {/* <LoginPage/> */}
+        <HomePage />
+
+      </div>
+    </BrowserRouter>
+
   );
 }
 

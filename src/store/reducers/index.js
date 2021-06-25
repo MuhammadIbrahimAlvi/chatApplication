@@ -41,5 +41,3 @@ export default rootReducer;
 //       return state;
 //   }
 // };
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");

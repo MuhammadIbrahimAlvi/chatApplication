@@ -36,7 +36,6 @@ const Google_auth = () => {
             // here we will pass a router with
             // history.push('/componentUrl')
           });
-
         // ...
       })
       .catch((error) => {
