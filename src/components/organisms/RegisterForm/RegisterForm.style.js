@@ -11,7 +11,20 @@ const styles = ({
         height: 'fit-content',
         alignItems: 'center',
         justifyItems: 'center'
-    }
+    },
+    '@media (max-width: 800px)': {
+        RegisterForm:{
+            width: '80%',
+            marginLeft:'0',
+            position: 'absolute',
+            borderRadius: '25px',
+            marginTop: '10%',
+            backgroundColor:'rgba(255,255,255,0.4)',
+            padding: '12px'
+    
+        }
+        
+        }
 });
 
 export{ 

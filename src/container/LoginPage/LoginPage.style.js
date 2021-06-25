@@ -20,7 +20,21 @@ const styles = ({
        fontSize: '1.3em',
        letterSpacing: '0.13em',
        fontFamily: 'Lato'
-    }
+    },
+    '@media (max-width: 800px)': {
+        FormLeft:{
+            background: `linear-gradient(0deg, rgba(48, 72, 168,0.6),rgba(48, 72, 128,0.3)), url(${BackgroundImage})`,
+            width: '100%',
+            
+            borderRadius: '0px'
+
+        },
+        LoginPage: {
+            flexDirection: 'column',
+            position: 'relative',
+            alignItems: 'center'
+        },
+      }
 });
 
 export{ 

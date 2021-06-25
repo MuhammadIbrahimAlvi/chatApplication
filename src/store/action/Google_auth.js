@@ -32,7 +32,6 @@ const Google_auth = (history) => {
             });
             history.push("/userpanel");
           });
-
         // ...
       })
       .catch((error) => {

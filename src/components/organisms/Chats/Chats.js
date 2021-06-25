@@ -9,7 +9,7 @@ const Chats = ( { classes }) => {
     return (
 
         <div className ={ classes.Chats}>
-            <h4>Chats</h4>
+          <h4>Messages</h4>
             <SearchBar/>
             <UsersList/>
         </div>
