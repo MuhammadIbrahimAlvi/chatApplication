@@ -1,71 +1,44 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { styles } from './UsersList.style';
-import AvatarIcon from '../../atoms/AvatarIcon/AvatarIcon';
-import Time from '../../atoms/Time/Time';
+import React, { useEffect } from "react";
+import { withStyles } from "@material-ui/core/styles";
+import { styles } from "./UsersList.style";
+import AvatarIcon from "../../atoms/AvatarIcon/AvatarIcon";
+import Time from "../../atoms/Time/Time";
 // import SearchBar from '../../atoms/SearchBar/SearchBar';
-import '../../../App.css';
+import "../../../App.css";
+import { useDispatch, useSelector } from "react-redux";
+import get_users from "../../../store/action/auth.actions";
+import Chat_user from "../../../store/action/Chat_user";
 
 const UsersList = ({ classes }) => {
-    const Users = [
-        {
-            id : '1',
-            name: 'Ali'
-        },
-        {
-            id : '2',
-            name: 'Ibrahim'
-        },
-        {
-            id : '3',
-            name: 'Zaid'
-        },
-        {
-            id : '4',
-            name: 'Hamza'
-        },
-        {
-            id : '5',
-            name: 'Kashif'
-        },
-        {
-            id : '6',
-            name: 'Hamza'
-        },
-        {
-            id : '7',
-            name: 'Hamza'
-        },
-        {
-            id : '8',
-            name: 'Hamza'
-        },
-        {
-            id : '9',
-            name: 'Hamza'
-        },
-        {
-            id : '10',
-            name: 'Hamza'
-        }
-    ]
-    return (
-        <div className ={classes.UsersListContainer}>
-            {
-                Users.map( user => 
-                <div className={classes.UsersList} key ={user.id}>
-                    <div className = {classes.UserCard}>
-                    <AvatarIcon/>
-                    <h5
-                    className={classes.userName}
-                    >{user.name}</h5>
-                    </div>
-                    <div >
-                    <Time/>
-                    </div>                  
-                </div> )
-            }
-        </div>
-    );
-}
+  const users_data = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  //   Get All users
+  useEffect(() => {
+    dispatch(get_users());
+  });
+  //   ForChats
+  // console.log(users_data);
+  return (
+    <>
+      <div className={classes.UsersListContainer}>
+        {users_data.map((user) => (
+          <div
+            className={classes.UsersList}
+            key={user.id}
+            onClick={() => dispatch(Chat_user(user))}
+          >
+            <div className={classes.UserCard}>
+              {/* <AvatarIcon url={user.image_url} /> */}
+              <img src={user.image_url} />
+              <h5 className={classes.userName}>{user.name}</h5>
+            </div>
+            <div>
+              <Time />
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
 export default withStyles(styles)(UsersList);
