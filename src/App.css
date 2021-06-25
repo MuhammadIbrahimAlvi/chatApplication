@@ -1,25 +1,28 @@
 ::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 25px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgb(226, 227, 228);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(231, 229, 229);
-  border-radius: 25px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(69, 93, 199, 0.9);
-}
-.App {
-  /* display: flex; */
+    width: 6px;
+    border-radius: 25px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(226, 227, 228); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(231, 229, 229); 
+      border-radius: 25px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(69, 93, 199,0.9); 
+  }
+.App{
   margin: 0px;
-  padding: 0px;
+  padding : 0px;
+}
+body{
+  margin: 0px;
+  font-family: 'Helvetica';
 }
