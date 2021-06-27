@@ -12,7 +12,10 @@ const get_users = () => {
         users.push(data.val());
         // console.log(users);
       });
-    dispatch({ type: "SETFIREBASEUSERS", payload: users });
+    // console.log(users);
+    setTimeout(() => {
+      dispatch({ type: "SETFIREBASEUSERS", payload: users });
+    }, 2000);
   };
 };
 

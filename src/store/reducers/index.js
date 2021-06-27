@@ -12,6 +12,7 @@ const rootReducer = (state = initialState, action) => {
     case "Set_User_By_Auth":
       return { ...state, current_user: action.payload };
     case "SETFIREBASEUSERS":
+      console.log("dispatch action");
       return {
         ...state,
         users: action.payload,

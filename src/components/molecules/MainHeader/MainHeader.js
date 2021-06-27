@@ -13,7 +13,8 @@ const MainHeader = ({ classes }) => {
       <NotificationsNoneIcon className={classes.HeaderItems} />
       <PeopleIcon className={classes.HeaderItems} />
       <div className={classes.UserCard}>
-        <img src={current_user.image_url} />
+        {/* <img src={current_user.image_url} /> */}
+        <AvatarIcon url={current_user.image_url} />
         <h4>{current_user.name}</h4>
       </div>
     </div>

@@ -14,8 +14,9 @@ const UsersList = ({ classes }) => {
   const dispatch = useDispatch();
   //   Get All users
   useEffect(() => {
+    // console.log("use effect");
     dispatch(get_users());
-  });
+  }, []);
   //   ForChats
   // console.log(users_data);
   return (

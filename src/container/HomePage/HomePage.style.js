@@ -1,6 +1,9 @@
-const styles = {
-  HomePage: {
-    display: "flex",
-  },
+const styles = ({
+HomePage: {
+    display: 'flex',
+    // backgroundColor: 'green'
+}
+});
+export {
+    styles
 };
-export { styles };
