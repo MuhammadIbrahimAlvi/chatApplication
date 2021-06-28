@@ -1,61 +1,83 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./ChatArea.style";
 import SendIcon from "@material-ui/icons/Send";
 import { useSelector } from "react-redux";
 import firebase from "../../../config/firebase";
+
 const ChatArea = ({ classes }) => {
-  const [chats, setChats] = useState([]);
+  const [chats, setChats] = useState({});
   const [message, setMessage] = useState("");
-  const user_id = useSelector((state) => state.current_user);
+  const [messagesData, setMEssageData] = useState([]);
+
+  const userid = useSelector((state) => state.current_user);
   const msgd_id = useSelector((state) => state.chat_user);
+
   const send_message = () => {
-    // setChats(chats.concat({ message }));
     const newid = Merge_ids();
-    firebase.database().ref("/").child(`chats/${newid}`).push({
-      messages: message,
-      // name: user_id.name,
-      uid: newid,
+
+    firebase.database().ref("/").child(`chats/${newid}/messages`).push({
+      sender: userid.user_id,
+      reciever: msgd_id.user_id,
+      text: message,
     });
   };
-  const get_messages = (uid) => {
-    firebase
+  const get_messages = async () => {
+    await firebase
       .database()
       .ref("/")
       .child("chats")
-      .on("child_added", (messages) => {
-        setChats(chats.concat({ messages }));
+      .on("value", (messages) => {
+        console.log(messages.val());
+        setChats({ ...messages.val() } || {});
       });
   };
-  const Merge_ids = () => {
-    if (user_id.user_id < msgd_id.user_id) {
-      return user_id.user_id + msgd_id.user_id;
+
+  const findChats = () => {
+    const chatRoomId = Merge_ids();
+    const chatMsgs = chats[chatRoomId];
+    console.log(chatMsgs);
+    if (chatMsgs && chatMsgs.messages) {
+      console.log(Object.entries(chatMsgs.messages));
+      setMEssageData([...Object.entries(chatMsgs.messages)]);
     } else {
-      return msgd_id.user_id + user_id.user_id;
+      setMEssageData([]);
     }
   };
 
+  const Merge_ids = () => {
+    if (userid.user_id < msgd_id.user_id) {
+      return userid.user_id + msgd_id.user_id;
+    } else {
+      return msgd_id.user_id + userid.user_id;
+    }
+  };
+  useEffect(async () => {
+    await get_messages();
+  }, [msgd_id]);
+  useEffect(async () => {
+    await findChats();
+  }, [chats]);
   return (
-    <div className={classes.chatAreaContainer}>
-      <div className={classes.ChatArea}>
-        {/* <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas,
-            deleniti? adipisicing elit. Quas, deleniti?
-          </p> */}
-        {chats.map((message, index) => {
-          return (
-            <div className={classes.sentMessage}>
-              <p key={index}>{message.msg}</p>
-            </div>
-          );
+    <>
+      <div className={classes.chatAreaContainer}>
+        {messagesData.map((val) => {
+          console.log(val);
+          if (val[1].reciever == msgd_id.user_id) {
+            return (
+              <div className={classes.sentMessage}>
+                <p>{val[1].text}</p>
+              </div>
+            );
+          } else {
+            return (
+              <div className={classes.receivedMessage}>
+                <p>{val[1].text}</p>
+              </div>
+            );
+          }
         })}
-
-        {/* 
-        <div className={classes.receivedMessage}>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div> */}
       </div>
-
       <div class="chatAreaInput">
         <textarea
           onChange={(e) => setMessage(e.target.value)}
@@ -69,7 +91,7 @@ const ChatArea = ({ classes }) => {
           onClick={send_message}
         />
       </div>
-    </div>
+    </>
   );
 };
 

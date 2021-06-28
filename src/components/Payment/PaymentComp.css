@@ -1,0 +1,27 @@
+.carddiv {
+  margin-left: 8px;
+  margin: 0 auto;
+  border: 1px solid;
+  border-color: rgb(109, 109, 250);
+  width: 95%;
+  border-radius: 25%;
+}
+.cardheadings {
+  background-color: #ffffff;
+  height: 100px;
+  position: relative;
+  width: 90%;
+  bottom: 50px;
+  padding-left: 15px;
+}
+.cardcoins {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 3px;
+  width: 77px;
+  margin-left: 50%;
+  height: 24px;
+  bottom: 30px;
+}

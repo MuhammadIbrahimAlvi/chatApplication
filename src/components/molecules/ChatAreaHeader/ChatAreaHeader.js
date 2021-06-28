@@ -10,12 +10,17 @@ import { useSelector } from "react-redux";
 
 const ChatAreaHeader = ({ classes }) => {
   const CurrentUserData = useSelector((state) => state.chat_user);
-  console.log(CurrentUserData);
+  // console.log(CurrentUserData);
 
   return (
     <div className={classes.ChatAreaHeader}>
+<<<<<<< HEAD
       {/* Left Side */}
       <div className={classes.ChatHeader_Left}>
+=======
+      {/* <img src={CurrentUserData.image_url} width="30px" height="40px" /> */}
+
+>>>>>>> 40157c16ef98f240cc6fb565ba93e8b9f7492358
       <AvatarIcon url={CurrentUserData.image_url} />
       <div style={{ padding: "10px" }}>
         <h5 style={{ margin: "0px" }}>{CurrentUserData.name}</h5>
