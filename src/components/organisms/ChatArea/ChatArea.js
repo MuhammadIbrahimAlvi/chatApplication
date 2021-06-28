@@ -28,23 +28,21 @@ const ChatArea = ({ classes }) => {
       .ref("/")
       .child("chats")
       .on("value", (messages) => {
-        setChats(messages.val());
-        findChats();
-        console.log("Chats=>", chats);
+        console.log(messages.val());
+        setChats({ ...messages.val() } || {});
       });
   };
 
   const findChats = () => {
-    const data = Object.entries(chats);
-    console.log(data, "data here");
-
-    data.forEach((element) => {
-      const key = element[0];
-      if (key.includes(msgd_id.user_id && userid.user_id)) {
-        setMEssageData(Object.entries(element[1].messages));
-        console.log(messagesData, "rendering array stte");
-      }
-    });
+    const chatRoomId = Merge_ids();
+    const chatMsgs = chats[chatRoomId];
+    console.log(chatMsgs);
+    if (chatMsgs && chatMsgs.messages) {
+      console.log(Object.entries(chatMsgs.messages));
+      setMEssageData([...Object.entries(chatMsgs.messages)]);
+    } else {
+      setMEssageData([]);
+    }
   };
 
   const Merge_ids = () => {
@@ -56,14 +54,15 @@ const ChatArea = ({ classes }) => {
   };
   useEffect(async () => {
     await get_messages();
-    // console.log(chatMessages, "User Effect msgs");
-
-    console.log("rendering");
   }, [msgd_id]);
+  useEffect(async () => {
+    await findChats();
+  }, [chats]);
   return (
     <>
       <div className={classes.chatAreaContainer}>
         {messagesData.map((val) => {
+          console.log(val);
           if (val[1].reciever == msgd_id.user_id) {
             return (
               <div className={classes.sentMessage}>
@@ -71,48 +70,29 @@ const ChatArea = ({ classes }) => {
               </div>
             );
           } else {
-            <div className={classes.recieveMessage}>
-              <p>{val[1].text}</p>
-            </div>;
+            return (
+              <div className={classes.receivedMessage}>
+                <p>{val[1].text}</p>
+              </div>
+            );
           }
         })}
-
-        <div class="chatAreaInput">
-          <textarea
-            onChange={(e) => setMessage(e.target.value)}
-            name="text"
-            className={classes.Input}
-            rows="2"
-            placeholder="Type a message..."
-          ></textarea>
-          <SendIcon
-            style={{ color: "rgb(87, 109, 204)", padding: "5px 5px" }}
-            onClick={send_message}
-          />
-        </div>
+      </div>
+      <div class="chatAreaInput">
+        <textarea
+          onChange={(e) => setMessage(e.target.value)}
+          name="text"
+          className={classes.Input}
+          rows="2"
+          placeholder="Type a message..."
+        ></textarea>
+        <SendIcon
+          style={{ color: "rgb(87, 109, 204)", padding: "5px 5px" }}
+          onClick={send_message}
+        />
       </div>
     </>
   );
 };
 
 export default withStyles(styles)(ChatArea);
-
-// const msgchat = [];
-// for (const property in messages) {
-//   msgchat.push(property);
-//   // console.log(`${property}`);
-// }
-
-// console.log(msgd_id);
-// console.log(userid);
-// console.log(chats);
-// console.log(user_id.user_id);
-
-// console.log("Messsages=>", message);
-
-// console.log(messages.val());
-
-// console.log("data=>", data);
-// console.log(chatuserkey);
-// console.log(chatMessages, "All Messages");
-// setChats(chats.concat({ message }));

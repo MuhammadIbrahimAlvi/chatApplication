@@ -1,10 +1,9 @@
-import { useState } from "react";
-
 const initialState = {
   users: [],
   current_user: {},
   chat_user: {},
   chats: [],
+  accountCredit: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -22,8 +21,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         chat_user: action.payload,
       };
-    case "MESSAGES":
-      return {};
+    case "Buy Coins":
+      return {
+        ...state,
+        accountCredit: action.payload,
+      };
     default:
       return state;
   }
