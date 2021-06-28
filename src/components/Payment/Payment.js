@@ -20,11 +20,6 @@ const PaymentCard = (props) => {
         <div className="cardimg">
           <img src={props.img} height="200px" width="100%" />
         </div>
-        <div className="cardcoins">
-          <span>
-            <p>Keemat</p>
-          </span>
-        </div>
         <div className="cardheadings">
           <Button onClick={() => dispatch(paymentBuyAction(obj))}>
             <img src={coin} />
