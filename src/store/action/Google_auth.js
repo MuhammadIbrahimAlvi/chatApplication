@@ -1,6 +1,7 @@
 import firebase from "../../config/firebase";
 
 const Google_auth = (history) => {
+  const LoggedUser = [];
   return (dispatch) => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase
@@ -20,6 +21,8 @@ const Google_auth = (history) => {
           email: user.email,
           image_url: user.photoURL,
         };
+        localStorage.setItem("Current User", JSON.stringify(create_user));
+
         firebase
           .database()
           .ref("/")
@@ -30,6 +33,7 @@ const Google_auth = (history) => {
               type: "Set_User_By_Auth",
               payload: create_user,
             });
+
             history.push("/userpanel");
           });
         // ...

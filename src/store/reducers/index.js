@@ -1,10 +1,9 @@
-import { useState } from "react";
-
 const initialState = {
   users: [],
   current_user: {},
   chat_user: {},
   chats: [],
+  accountCredit: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -12,6 +11,7 @@ const rootReducer = (state = initialState, action) => {
     case "Set_User_By_Auth":
       return { ...state, current_user: action.payload };
     case "SETFIREBASEUSERS":
+      console.log("dispatch action");
       return {
         ...state,
         users: action.payload,
@@ -21,8 +21,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         chat_user: action.payload,
       };
-    case "MESSAGES":
-      return {};
+    case "Buy Coins":
+      return {
+        ...state,
+        accountCredit: action.payload,
+      };
     default:
       return state;
   }

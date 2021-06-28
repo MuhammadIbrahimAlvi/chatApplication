@@ -14,8 +14,9 @@ const UsersList = ({ classes }) => {
   const dispatch = useDispatch();
   //   Get All users
   useEffect(() => {
+    // console.log("use effect");
     dispatch(get_users());
-  });
+  }, []);
   //   ForChats
   // console.log(users_data);
   return (
@@ -28,8 +29,8 @@ const UsersList = ({ classes }) => {
             onClick={() => dispatch(Chat_user(user))}
           >
             <div className={classes.UserCard}>
-              {/* <AvatarIcon url={user.image_url} /> */}
-              <img src={user.image_url} />
+              <AvatarIcon url={user.image_url} />
+              {/* <img src={user.image_url} /> */}
               <h5 className={classes.userName}>{user.name}</h5>
             </div>
             <div>
