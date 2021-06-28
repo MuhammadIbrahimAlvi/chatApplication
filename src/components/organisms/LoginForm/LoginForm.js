@@ -60,13 +60,13 @@ const LoginForm = ({ classes, history }) => {
         </TextField>
         <Button type="submit">Sign in</Button>
       </form>
-      <Button
+      <div className={classes.AuthBtn}
         onClick={() => dispatch(Google_auth(history))}
         // onClick={() => history.push("/userpanel")}
       >
-        <img src={GoogleLogo} className={classes.GoogleLogo} alt="" /> Sign in
+        <img src={GoogleLogo} className={classes.GoogleLogo} alt="" />Sign in
         with Google
-      </Button>
+      </div>
 
       <p>
         Don't have an account

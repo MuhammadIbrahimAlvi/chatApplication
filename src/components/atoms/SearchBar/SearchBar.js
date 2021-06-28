@@ -5,6 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const SeacrhBar = ({ classes }) => {
     return (
+        <div className={classes.searchBarWrapper}>
         <div className = {classes.SearchBar}>
             <SearchIcon className={classes.SearchIconStyle} />
             <input
@@ -13,6 +14,8 @@ const SeacrhBar = ({ classes }) => {
             >
             </input>
         </div>
+        </div>
+
     );
 }
 export default withStyles(styles)(SeacrhBar);

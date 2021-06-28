@@ -10,7 +10,8 @@ const styles = ({
         zIndex: '100',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        fontFamily: 'Poppins, sans-serif',
     },
     Links:{
         color: 'white',
@@ -20,6 +21,7 @@ const styles = ({
         alignItems: 'center',
         opacity: '0.7',
         fontWeight: 'bold',
+        fontFamily: 'Poppins, sans-serif',
         '&:hover' : {
             opacity: '1'
         }
@@ -29,7 +31,8 @@ const styles = ({
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'row',
-        color: 'white'
+        color: 'white',
+        
     },
     Name:{
         marginLeft:'8px'

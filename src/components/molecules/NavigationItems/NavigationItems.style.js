@@ -3,7 +3,7 @@ const styles = ({
         color: 'white',
         display: 'flex',
         flexDirection: 'column',
-        fontFamily: 'Helvetica'
+        fontFamily: 'Poppins, sans-serif',
     },
     NavLinks: {
         display: 'flex',

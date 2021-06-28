@@ -1,18 +1,19 @@
 const styles = ({
     chatAreaContainer: {
-        height: '80%',
+        height: '85%',
         backgroundColor: 'white',
-        fontFamily: 'Helvetica'
+        fontFamily: 'Poppins'
+        
     },
     ChatArea: {
         boxSizing: 'border-box',
         padding: '10px',
-        width: '98%',
+        width: '100%',
         margin: 'auto',
         display: 'flex',
         flexDirection: 'column',
         color: 'white',
-        height: '94%',
+        height: '90%',
         backgroundColor: 'white',
         overflow: 'auto',
         borderBottom: '1px solid lightgray',
@@ -48,9 +49,10 @@ const styles = ({
     chatAreaInput: {
         display: 'flex',
         width: '100%',
+        height: '10%',
         alignItems: 'center',
         justifyItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: 'black',
       
     },
     Input:{
@@ -61,6 +63,7 @@ const styles = ({
         marginLeft: '12px',
         resize: 'none',
         paddingTop: '8px',
+        height: '100%'
     },
     SendIcon: {
         width:'30px',

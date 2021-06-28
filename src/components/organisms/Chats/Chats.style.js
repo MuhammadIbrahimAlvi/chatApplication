@@ -1,13 +1,19 @@
 const styles = ({
     Chats: {
-        padding:'20px 8px',
-        width: '17%',
+        padding:'8px 8px',
+        width: '25%',
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
         marginLeft: '12%',
-        backgroundColor: 'rgba(231, 233, 248,0.4)'
+        backgroundColor: 'rgba(231, 233, 248,0.4)',
+        fontFamily: 'Poppins',
+        fontSize:'22px',
+        '& h4':{
+            margin: '12px 10px'
+        }
         },
+      
         '@media (max-width: 800px)': {
             Chats: {
                 marginLeft: '0px',

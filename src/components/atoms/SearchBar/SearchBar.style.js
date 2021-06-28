@@ -1,19 +1,26 @@
 const styles = ({
+    searchBarWrapper:{
+        backgroundColor: 'white',
+        width: '98%',
+        borderRadius: '5px',
+        padding: '12px 0px',
+        boxShadow: '2px 2px 5px lightgray',
+    },
     SearchBar: {
         display: 'flex',
-        padding: '20px',
-        boxShadow: '2px 2px 5px lightgray',
-        borderRadius: '5px',
-        padding: '14px 15px',
-        backgroundColor: 'white',
-        width: '85%',
-        marginBottom: '20px',
-        marginTop: '10px'
+        borderRadius: '2px',
+        padding: '8px 8px',
+        backgroundColor: 'rgb(239, 245, 250)',
+        width: '78%',
+        margin: 'auto',
+        marginBottom: '2px',
+        marginTop: '2px'
     },
     SearchInput: {
         border: 'none',
         outline: 'none',
-        width: '100%'
+        width: '100%',
+        backgroundColor: 'rgb(239, 245, 250)',
        
     },
     SearchIconStyle: {

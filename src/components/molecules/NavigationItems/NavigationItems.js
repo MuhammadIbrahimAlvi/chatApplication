@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './NavigationItems.style';
 import { spacing } from '@material-ui/system';
-// import { NavLink} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
@@ -12,25 +12,25 @@ const NavigationItems = ({ classes }) => {
 
     const navLinks = [
         {
-            to: '',
+            to: '/userpanel',
             name: 'Message',
             iconComponent: <ChatBubbleOutlineIcon
              className={classes.navIcons}/>
         },
         {
-            to: '',
+            to: '/findusers',
             name: 'Find',
             iconComponent: <PeopleOutlineIcon
             className={classes.navIcons}
             />
         },
         {
-            to: '',
+            to: '/meetings',
             name: 'Meetings',
             iconComponent: <EventAvailableIcon className={classes.navIcons} />
         },
         {
-            to: '',
+            to: '/settings',
             name: 'Settings',
             iconComponent: <SettingsIcon className={classes.navIcons} />
         }
@@ -45,13 +45,13 @@ const NavigationItems = ({ classes }) => {
                     navLinks.map(link =>
 
                         <p key={link.name} className={classes.NavLinks} >
-                            <a 
+                            <NavLink
                             className={classes.Links}
-                            href={link.to}
+                            to={link.to}
                             >       
                             {link.iconComponent} 
                             <span className={classes.Name}>{link.name}</span>    
-                            </a>
+                            </NavLink>
                         </p>
                     )
                 }
