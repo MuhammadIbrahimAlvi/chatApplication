@@ -89,6 +89,9 @@ const ChatArea = ({ classes }) => {
         <SendIcon
           style={{ color: "rgb(87, 109, 204)", padding: "5px 5px" }}
           onClick={send_message}
+          // onClick={() =>
+            // chats !== undefined ? alert("Undefined") : send_message()
+          // }
         />
       </div>
     </>

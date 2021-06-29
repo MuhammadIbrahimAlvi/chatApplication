@@ -7,6 +7,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import SettingsIcon from '@material-ui/icons/Settings';
+import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 
 const NavigationItems = ({ classes }) => {
 
@@ -24,6 +25,11 @@ const NavigationItems = ({ classes }) => {
             className={classes.navIcons}
             />
         },
+        {
+            to: "/payment",
+            name: "Payments",
+            iconComponent: <LocalAtmIcon className={classes.navIcons} />,
+          },
         {
             to: '/meetings',
             name: 'Meetings',
