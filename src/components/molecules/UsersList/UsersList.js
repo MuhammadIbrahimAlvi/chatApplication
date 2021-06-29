@@ -8,9 +8,13 @@ import "../../../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import get_users from "../../../store/action/auth.actions";
 import Chat_user from "../../../store/action/Chat_user";
-
-const UsersList = ({ classes }) => {
+import { withRouter } from "react-router";
+const UsersList = ({ classes, history }) => {
   const users_data = useSelector((state) => state.users);
+  const currentUserData = useSelector((state) => state.current_user);
+  const res = users_data.filter(
+    (item) => !currentUserData.user_id.includes(item.user_id)
+  );
   const dispatch = useDispatch();
   //   Get All users
   useEffect(() => {
@@ -22,11 +26,11 @@ const UsersList = ({ classes }) => {
   return (
     <>
       <div className={classes.UsersListContainer}>
-        {users_data.map((user) => (
+        {res.map((user) => (
           <div
             className={classes.UsersList}
             key={user.id}
-            onClick={() => dispatch(Chat_user(user))}
+            onClick={() => dispatch(Chat_user(user, history))}
           >
             <div className={classes.UserCard}>
               <AvatarIcon url={user.image_url} />

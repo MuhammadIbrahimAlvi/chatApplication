@@ -6,14 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import paymentBuyAction from "../../store/action/paymentBuyAction";
 const PaymentCard = (props) => {
   const dispatch = useDispatch();
-  //   const amount = useSelector((state) => state.accountCredit);
+
   const user = useSelector((state) => state.current_user);
   const obj = {
     userData: user,
     walletAmount: props.coins,
   };
-  const details = useSelector((state) => state.accountCredit);
-  console.log("useSelector Amount details=>", details);
+
   return (
     <div>
       <div className="carddiv">
