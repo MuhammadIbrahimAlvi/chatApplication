@@ -4,6 +4,7 @@ const Chat_user = (selectedUser, history) => {
     dispatch({ type: "CHATUSERDATA", payload: selectedUser });
   };
   // history.push(`/chat/${selectedUser.user_id}`);
+
 };
 
 export default Chat_user;

@@ -78,7 +78,7 @@ const ChatArea = ({ classes }) => {
           }
         })}
       </div>
-      <div class="chatAreaInput">
+      <div className= {classes.chatAreaInput}>
         <textarea
           onChange={(e) => setMessage(e.target.value)}
           name="text"

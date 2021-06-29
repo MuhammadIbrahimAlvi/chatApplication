@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./UsersList.style";
 import AvatarIcon from "../../atoms/AvatarIcon/AvatarIcon";
@@ -8,7 +8,8 @@ import "../../../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import get_users from "../../../store/action/auth.actions";
 import Chat_user from "../../../store/action/Chat_user";
-import { withRouter } from "react-router";
+
+
 const UsersList = ({ classes, history }) => {
   const users_data = useSelector((state) => state.users);
   const currentUserData = useSelector((state) => state.current_user);
@@ -21,6 +22,7 @@ const UsersList = ({ classes, history }) => {
     // console.log("use effect");
     dispatch(get_users());
   }, []);
+
   //   ForChats
   // console.log(users_data);
   return (
@@ -31,6 +33,7 @@ const UsersList = ({ classes, history }) => {
             className={classes.UsersList}
             key={user.id}
             onClick={() => dispatch(Chat_user(user, history))}
+            
           >
             <div className={classes.UserCard}>
               <AvatarIcon url={user.image_url} />

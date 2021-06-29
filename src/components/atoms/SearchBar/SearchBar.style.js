@@ -20,6 +20,7 @@ const styles = ({
         border: 'none',
         outline: 'none',
         width: '100%',
+        margin: '0',
         backgroundColor: 'rgb(239, 245, 250)',
        
     },

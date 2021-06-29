@@ -9,6 +9,7 @@ import Img1 from "../../assets/moneyTransferCard.png";
 import Details from "../../components/AccountDetails/Details";
 import MediaQuery from "react-responsive";
 import { Route, Switch } from "react-router-dom";
+import ChatsPage from '../ChatsPage/ChatsPage';
 
 const HomePage = ({ classes }) => {
   return (
@@ -23,7 +24,8 @@ const HomePage = ({ classes }) => {
 
       <MediaQuery maxDeviceWidth={800}>
         <SideBar />
-        <Chats />
+        <Chats/>
+        <ChatsPage/>
       </MediaQuery>
 
       {/* <PaymentCard img={Img1} img1={Img1} coins="20 Buy" />
@@ -37,11 +39,3 @@ const HomePage = ({ classes }) => {
 };
 export default withStyles(styles)(HomePage);
 
-// import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
-// import EmojiData from "../../components/EmojiPicker/EmojiPicker";
-
-// const [chosenEmoji, setChosenEmoji] = useState(null);
-
-// const onEmojiClick = (event, emojiObject) => {
-//   setChosenEmoji(emojiObject);
-// };
