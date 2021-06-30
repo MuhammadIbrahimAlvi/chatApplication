@@ -21,7 +21,7 @@ const styles = ({
     sentMessage: {
         backgroundColor: 'gray',
         borderRadius: '20px',
-        padding: '10px',
+        padding: '2px 10px',
         display: 'flex',
         marginLeft: 'auto',
         alignItems: 'flex-end',
@@ -37,7 +37,7 @@ const styles = ({
         backgroundColor: 'rgb(87, 109, 204)',
         borderRadius: '20px',
         borderBottomLeftRadius: '0px',
-        padding: '10px',
+        padding: '2px 10px',
         display: 'flex',
         flexDirection: 'row',
         color: 'white',
@@ -53,6 +53,7 @@ const styles = ({
         alignItems: 'center',
         justifyItems: 'center',
         backgroundColor: 'white',
+        // borderTop: '1px solid lightgray'
     },
     Input: {
         width: 'calc(100% - 55px)',
@@ -62,7 +63,11 @@ const styles = ({
         marginLeft: '12px',
         resize: 'none',
         paddingTop: '8px',
+        padding:'8px',
         // height: '100%'
+        border: '1px solid lightgray',
+        borderRadius: '5px'
+
     },
     SendIcon: {
         width: '30px',

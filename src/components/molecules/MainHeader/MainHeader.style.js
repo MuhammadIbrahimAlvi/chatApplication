@@ -22,9 +22,13 @@ const styles = ({
     borderRadius: '5px',
     color: 'white',
     justifyContent: 'space-evenly',
-    width: '155px',
+    width: '150px',
+    height: '50px',
     marginRight: '25px',
     boxShadow: '2px 2px 5px lightgray',
+    '& h4': {
+    textOverflow: 'ellipsis',
+    overflow: 'hidden' }
     },
     '@media (max-width: 800px)': {
         MainHeader: {

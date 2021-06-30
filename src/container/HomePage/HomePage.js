@@ -25,7 +25,7 @@ const HomePage = ({ classes }) => {
       <MediaQuery maxDeviceWidth={800}>
         <SideBar />
         <Chats/>
-        <ChatsPage/>
+        {/* <ChatsPage/> */}
       </MediaQuery>
 
       {/* <PaymentCard img={Img1} img1={Img1} coins="20 Buy" />

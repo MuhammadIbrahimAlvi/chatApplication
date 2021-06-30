@@ -18,8 +18,7 @@ const styles = ({
         alignItems: 'center',
     },
     ChatHeader_Right: {
-        color: 'lightgray',
-
+        color: 'lightgray'
     },
     '@media (max-width: 800px)': {
         ChatAreaHeader: {

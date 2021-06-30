@@ -31,12 +31,20 @@ const styles = ({
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'row',
-        color: 'white',
+        color: 'white'
         
     },
     Name:{
-        marginLeft:'8px'
+        marginLeft:'5px',
+        textDecoration: 'none',
+        color: 'white'
     },
+    '@media (max-width: 1030px)': {
+        SideBar: {
+            width: '15%',
+           
+        }
+      },
     '@media (max-width: 800px)': {
         SideBar: {
             position: 'fixed',

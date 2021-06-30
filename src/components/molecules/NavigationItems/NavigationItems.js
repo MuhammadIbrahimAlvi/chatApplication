@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { styles } from "./NavigationItems.style";
-import { spacing } from "@material-ui/system";
-// import { NavLink} from 'react-router-dom';
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import PeopleOutlineIcon from "@material-ui/icons/PeopleOutline";
-// import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Button from "../../atoms/Button/Button";
 import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 import { useSelector } from "react-redux";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import InfoIcon from "@material-ui/icons/Info";
-import "./clipboard.style.css";
+
 
 const NavigationItems = ({ classes }) => {
   const secretId = useSelector((state) => state.current_user.user_id);
 
   const [text, setText] = useState(secretId);
   const [isCopied, setIsCopied] = useState(false);
-  const [visibility, setVisibility] = useState(false);
+  // const [visibility, setVisibility] = useState(false);
   const onCopyText = () => {
     setIsCopied(true);
     setTimeout(() => {
@@ -62,7 +57,7 @@ const NavigationItems = ({ classes }) => {
           </p>
         ))}
 
-        <div className="container">
+        {/* <div className="container">
           {visibility ? (
             <input
               type="text"
@@ -83,8 +78,8 @@ const NavigationItems = ({ classes }) => {
             titleAccess="Show Clipboard"
             onClick={() => setVisibility(!visibility)}
           />
-        </div>
-      </div>
+          </div> */}
+      </div> 
     </div>
   );
 };

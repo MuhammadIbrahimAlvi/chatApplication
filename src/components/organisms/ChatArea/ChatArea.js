@@ -9,18 +9,16 @@ const ChatArea = ({ classes }) => {
   const [chats, setChats] = useState({});
   const [message, setMessage] = useState("");
   const [messagesData, setMEssageData] = useState([]);
-
   const userid = useSelector((state) => state.current_user);
   const msgd_id = useSelector((state) => state.chat_user);
-
   const send_message = () => {
     const newid = Merge_ids();
-
     firebase.database().ref("/").child(`chats/${newid}/messages`).push({
       sender: userid.user_id,
       reciever: msgd_id.user_id,
       text: message,
     });
+   
   };
   const get_messages = async () => {
     await firebase
@@ -32,7 +30,6 @@ const ChatArea = ({ classes }) => {
         setChats({ ...messages.val() } || {});
       });
   };
-
   const findChats = () => {
     const chatRoomId = Merge_ids();
     const chatMsgs = chats[chatRoomId];
@@ -44,7 +41,6 @@ const ChatArea = ({ classes }) => {
       setMEssageData([]);
     }
   };
-
   const Merge_ids = () => {
     if (userid.user_id < msgd_id.user_id) {
       return userid.user_id + msgd_id.user_id;
@@ -78,7 +74,7 @@ const ChatArea = ({ classes }) => {
           }
         })}
       </div>
-      <div className= {classes.chatAreaInput}>
+      <div className={classes.chatAreaInput}>
         <textarea
           onChange={(e) => setMessage(e.target.value)}
           name="text"
@@ -89,14 +85,13 @@ const ChatArea = ({ classes }) => {
         <SendIcon
           style={{ color: "rgb(87, 109, 204)", padding: "5px 5px" }}
           onClick={() =>
-            chats === undefined
-              ? alert("Select Any User to Message")
-              : send_message()
+            msgd_id.user_id === undefined
+            ? alert("Select Any User to Message")
+            : send_message()
           }
         />
       </div>
     </>
   );
 };
-
 export default withStyles(styles)(ChatArea);
