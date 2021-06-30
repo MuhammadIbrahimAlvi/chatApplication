@@ -1,7 +1,8 @@
 const styles = ({
 HomePage: {
     display: 'flex',
-    // backgroundColor: 'green'
+
+    backgroundColor: 'rgb(239, 241, 250)'
 }
 });
 export {

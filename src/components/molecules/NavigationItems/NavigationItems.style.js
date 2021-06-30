@@ -3,12 +3,13 @@ const styles = ({
         color: 'white',
         display: 'flex',
         flexDirection: 'column',
-        fontFamily: 'Helvetica'
+        // paddingLeft: '25px',
+        fontFamily: 'Poppins, sans-serif'
     },
     NavLinks: {
         display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        
     },
     Links:{
         color: 'white',
@@ -18,13 +19,15 @@ const styles = ({
         alignItems: 'center',
         opacity: '0.7',
         '&:hover' : {
-            // backgroundColor: 'rgba(255,255,255,0.2)'
             opacity: '1'
         }
 
     },
     Name:{
-        marginLeft:'8px'
+        marginLeft:'8px',
+        color: 'white',
+        textDecoration: 'none',
+
     },
     '@media (max-width: 800px)': {
         NavLinksContainer: {

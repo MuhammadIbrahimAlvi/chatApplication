@@ -9,6 +9,11 @@ const styles = ({
         alignItems: 'center',
         justifyItems: 'center'
     },
+    AuthBtn:{
+display:'flex',
+alignItems:'center',
+marginTop:'10px'
+    },
     GoogleLogo:{
         width: '25px',
         height: '25px',
@@ -16,14 +21,21 @@ const styles = ({
         backgroundColor: 'white',
         borderRadius: '50%'
     },
-    '@media (max-width: 800px)': {
+    '@media (max-width: 1400px)': {
+        LoginForm:{
+            width: '32%',
+    
+        }
+        
+        },
+    '@media (max-width: 1100px)': {
     LoginForm:{
         width: '80%',
         marginLeft:'0',
         position: 'absolute',
         borderRadius: '25px',
         marginTop: '20%',
-        backgroundColor:'rgba(255,255,255,0.4)',
+        backgroundColor:'rgba(255,255,255,0.6)',
         padding: '12px'
 
     }

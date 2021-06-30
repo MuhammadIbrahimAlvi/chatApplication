@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 const LoginPage = ({ classes }) => {
   return (
-    // <BrowserRouter>
     <div className={classes.LoginPage}>
       <div className={classes.FormLeft}></div>
       <Switch>
@@ -19,7 +18,6 @@ const LoginPage = ({ classes }) => {
         </Route>
       </Switch>
     </div>
-    // </BrowserRouter>
   );
 };
 export default withStyles(styles)(LoginPage);
