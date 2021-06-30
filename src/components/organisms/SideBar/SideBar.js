@@ -19,11 +19,10 @@ const SideBar = ({ classes, history }) => {
         </div>
 
         <div>
-          {/* <Button>Logout</Button> */}
           <p className={classes.NavLinks}>
             <a className={classes.Links} href="#">
               <ExitToAppIcon />
-              <NavLink to="/">
+              <NavLink to="/" className={classes.Name}>
                 <span
                   className={classes.Name}
                   onClick={() => dispatch(setLogin(false, history))}

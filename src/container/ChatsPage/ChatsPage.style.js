@@ -3,7 +3,7 @@ const styles = ({
         boxSizing: 'border-box',
         width: '100%',
         margin: '0',
-        height: '90%',
+        height: '100%',
         padding: '0',
         // marginLeft: '12%',
         // marginRight: '5px',
@@ -13,7 +13,7 @@ const styles = ({
     '@media (max-width: 800px)': {
         ChatScreen: {
             width:'100%',
-           height: '80vh'
+           height: '90vh'
         }
       }
 });

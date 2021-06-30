@@ -1,15 +1,14 @@
 const styles = ({
     Logo: {
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         marginTop: '30px',
         marginBottom: '60px',
         width: '45px',
         height: '40px',
         color: 'white',
         backgroundColor: 'orange',
-        borderRadius: '25px'
+        borderRadius: '25px',
+        marginLeft: '25px'
      
     },
     LogoImage:{
