@@ -6,7 +6,8 @@ UsersListContainer: {
     backgroundColor: 'white',
     backgroundColor: 'rgba(231, 233, 248,0.4)',
     '& :hover': {
-        opacity: '0.9'
+        opacity: '0.9',
+        cursor: 'pointer'
     }
 },
 UsersList:{
@@ -29,7 +30,8 @@ UserCard: {
     display: 'flex',
     alignItems: 'center',
     '& :hover': {
-        opacity: '0.9'
+        opacity: '0.9',
+        
     }
 },
 userName: {

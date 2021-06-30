@@ -54,6 +54,9 @@ const styles = ({
         justifyItems: 'center',
         backgroundColor: 'white',
         // borderTop: '1px solid lightgray'
+        '& :hover':{
+            cursor:'pointer'
+        }
     },
     Input: {
         width: 'calc(100% - 55px)',
@@ -72,7 +75,8 @@ const styles = ({
     SendIcon: {
         width: '30px',
         color: 'rgb(87, 109, 204)',
-        paddingBottom: '6px'
+        paddingBottom: '6px',
+   
     },
     '@media (max-width: 800px)': {
         receivedMessage: {
