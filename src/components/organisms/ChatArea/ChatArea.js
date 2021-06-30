@@ -18,7 +18,7 @@ const ChatArea = ({ classes }) => {
       reciever: msgd_id.user_id,
       text: message,
     });
-   
+   setMessage("")
   };
   const get_messages = async () => {
     await firebase
@@ -80,6 +80,7 @@ const ChatArea = ({ classes }) => {
           name="text"
           className={classes.Input}
           rows="2"
+          value={message}
           placeholder="Type a message..."
         ></textarea>
         <SendIcon
